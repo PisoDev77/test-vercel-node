@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 router.get("/test1", async (req, res) => {
   try {
     res.json({
-      status: 200,
+      status: __dirname,
       message: "GET SUCESS",
     });
   } catch (err) {
