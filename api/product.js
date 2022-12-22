@@ -28,7 +28,7 @@ router.get("/test1", async (req, res) => {
 
 router.get("/test2", async (req, res) => {
   try {
-    res.sendFile(path.join(__dirname, "/public/index.html"));
+    res.sendFile("index.html", { root: path.join(__dirname, "public") });
   } catch (err) {
     console.log(err);
     return res.status(500).send("SERVER ERROR");
