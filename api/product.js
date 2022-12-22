@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 
 router.get("/", async (req, res) => {
   try {
@@ -13,12 +14,9 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/html", async (req, res) => {
+router.get("/testHtml", async (req, res) => {
   try {
-    res.json({
-      status: 200,
-      message: "GET SUCESS",
-    });
+    res.sendFile(path.join(__dirname, "/public/index.html"));
   } catch (err) {
     console.log(err);
     return res.status(500).send("SERVER ERROR");
